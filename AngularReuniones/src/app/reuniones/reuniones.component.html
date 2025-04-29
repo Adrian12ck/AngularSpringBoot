@@ -1,0 +1,16 @@
+<div>
+    <div *ngFor="let reunion of reuniones">
+        <h2>Asunto: {{ reunion.asunto }}</h2>
+        <p>Fecha: {{ reunion.fecha | date:'dd/MM/yyyy' }}</p>
+
+        <h3>Personas:</h3>
+        <ul>
+          <li *ngFor="let persona of reunion.asistentes">
+            {{ persona.nombre }}
+          </li>
+        </ul>
+      </div>
+      <button (click)="crearReunion()"> Crear Reunion </button>
+
+      <button (click)="logout()"> Log Out </button>
+</div>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script>
+        async function login(event) {
+            event.preventDefault(); // Evita que el formulario recargue la página
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            const response = await fetch("http://localhost:8080/auth/generateToken", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, password })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                localStorage.setItem("token", data.token); // Guarda el JWT en localStorage
+                window.location.href = "reuniones.html"; // Redirige al dashboard
+            } else {
+                alert("Usuario o contraseña incorrectos");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Login</h2>
+    <form onsubmit="login(event)">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" required>
+        <br>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" required>
+        <br>
+        <button type="submit">Iniciar Sesión</button>
+    </form>
+</body>
+</html>

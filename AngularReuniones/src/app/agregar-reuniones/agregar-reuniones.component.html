@@ -1,0 +1,21 @@
+<h2>Agregar Nueva Reunión</h2>
+
+<form (ngSubmit)="crearReunion()">
+
+  <label for="name">ID</label>
+  <input type="text" id="id" [(ngModel)]="reuniones.id" name="id" required>
+
+  <label for="name">Asunto</label>
+  <input type="text" id="name" [(ngModel)]="reuniones.asunto" name="name" required>
+
+  <label for="date">Fecha</label>
+  <input type="date" id="date" [(ngModel)]="reuniones.fecha" name="date" required>
+
+  <ul>
+    <ol *ngFor="let persona of personas">
+      <input  (change)="onCheckboxChange(persona.id, persona.nombre, persona.apellido, $event)" id="{{persona.id}}" type="checkbox"> {{ persona.nombre }} {{ persona.apellido }}
+    </ol>
+  </ul>
+
+  <button type="submit">Agregar</button>
+</form>
