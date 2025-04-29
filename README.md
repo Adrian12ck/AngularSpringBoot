@@ -1,14 +1,20 @@
-# 🛠️ Proyecto de Reuniones y Personas con Spring Boot
+# 🛠️ Proyecto de Reuniones y Personas con Spring Boot + Angular + JWT
 
-Este es un proyecto simple pero funcional que gestiona reuniones y personas utilizando **Spring Boot**, una base de datos en memoria **H2** y **Thymeleaf** para la vista en HTML. Además, incluye una API REST básica disponible en la ruta `/api/rest`.
+Este es un proyecto fullstack que gestiona reuniones y personas utilizando **Spring Boot** en el backend, **Angular** en el frontend, y autenticación con **JWT**. Incluye una API REST funcional (probada con Postman) y una interfaz web en Angular que todavía está en desarrollo.
 
 ## 🚀 Tecnologías Utilizadas
 
+### 🔙 Backend
 - **Java 17+**
 - **Spring Boot**
-- **Spring Boot Starter Data REST**
+- **Spring Security con JWT**
+- **Spring Data JPA**
 - **H2 Database (en memoria)**
-- **Thymeleaf**
+
+### 🔝 Frontend
+- **Angular 17+**
+- **HttpClient**
+- **JWT para autenticación**
 
 ## ⚙️ Instalación y Ejecución
 
@@ -23,36 +29,59 @@ Este es un proyecto simple pero funcional que gestiona reuniones y personas util
    mvn spring-boot:run
    ```
 
-3. **Accede a la aplicación**
+3. **Levantar Angular**
+   ```bash
+   cd frontend
+   npm install
+   ng serve
+   ```
+   
+4. **Accede a la aplicación**
    - Interfaz web: [http://localhost:8080](http://localhost:8080)
    - API REST: [http://localhost:8080/api/rest](http://localhost:8080/api/rest)
+  
+## 🔐 Autenticación JWT
+- El backend expone endpoints de login y registro con JWT.
+
+- **El token se debe incluir en el header de las peticiones:
 
 ## 🛠️ Funcionalidades
 
-- **Gestión de personas**:❌ Crear, ✔ listar, ❌actualizar y ❌eliminar.
+- Login/Registro con JWT ✔
+- **Gestión de personas** (Frontend): ✔ Crear, ✔ Listar, ❌ Actualizar y ❌ Eliminar.
 - **Gestión de reuniones**: Asignar personas a reuniones y visualizar información de las mismas.
-- **API REST**: Datos accesibles en formato JSON.
+- **API REST** Completa en backend ✔
+- Protección de rutas con roles (en progreso)
 
 ## 🖥️ Vistas Disponibles
 
-- **Inicio**: Lista de reuniones y personas.
-- **Formulario**: Agregar/editar personas y reuniones. ❌
+- Login ✔
+- Registro ✔
+- Listado de personas y reuniones ✔
+- Formulario para crear ✔
+- Editar personas ❌ (pendiente)
 
 ## 📦 Estructura del Proyecto
 ```
-.
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com.adrian.reuniones
-│   │   │       ├── controller
-│   │   │       ├── model
-│   │   │       └── ...
-│   │   └── resources
-│   │       ├── application.yaml
-│   │       └── templates
-│   └── test
-├── pom.xml
+├── backend
+│   ├── src/main/java/com/adrian/reuniones
+│   │   ├── config
+│   │   ├── controller
+│   │   ├── model
+│   │   ├── repository
+│   │   ├── security
+│   │   └── service
+│   ├── resources
+│   │   ├── application.yaml
+│   │   └── ...
+│   └── pom.xml
+├── frontend
+│   ├── src/app
+│   │   ├── components
+│   │   ├── services
+│   │   └── guards
+│   ├── angular.json
+│   └── package.json
 ```
 
 ## 🔧 Configuración de la Base de Datos
