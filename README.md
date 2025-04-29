@@ -43,8 +43,10 @@ Este es un proyecto fullstack que gestiona reuniones y personas utilizando **Spr
 ## 🔐 Autenticación JWT
 - El backend expone endpoints de login y registro con JWT.
 
-- **El token se debe incluir en el header de las peticiones:
-
+- El token se debe incluir en el header de las peticiones:
+   ```mkfile
+   Authorization: Bearer <tu-token-jwt>
+   ```
 ## 🛠️ Funcionalidades
 
 - Login/Registro con JWT ✔
@@ -64,7 +66,7 @@ Este es un proyecto fullstack que gestiona reuniones y personas utilizando **Spr
 ## 📦 Estructura del Proyecto
 ```
 ├── backend
-│   ├── src/main/java/com/adrian/reuniones
+│   ├── src/main/java/com/user/reuniones
 │   │   ├── config
 │   │   ├── controller
 │   │   ├── model
