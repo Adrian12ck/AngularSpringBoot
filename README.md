@@ -37,7 +37,7 @@ Este es un proyecto fullstack que gestiona reuniones y personas utilizando **Spr
    ```
    
 4. **Accede a la aplicación**
-   - Interfaz web: [http://localhost:8080](http://localhost:8080)
+   - Interfaz web: [http://localhost:8080](http://localhost:8080) (usuario: admin, contraseña: admin)
    - API REST: [http://localhost:8080/api/rest](http://localhost:8080/api/rest)
   
 ## 🔐 Autenticación JWT
