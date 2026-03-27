@@ -99,5 +99,5 @@ La base de datos H2 está configurada en memoria y se accede desde:
 - **[Adrian](https://github.com/Adrian12ck)**
 
 ## ⚠️ Licencia
-Este proyecto se distribuye bajo la licencia MIT. ¡Úsalo con libertad! 🎉
+Este proyecto se distribuye bajo la licencia MIT.
 
